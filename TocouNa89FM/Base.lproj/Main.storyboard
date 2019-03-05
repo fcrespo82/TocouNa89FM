@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -337,7 +338,7 @@
                                 </menu>
                             </menuItem>
                             <menuItem title="Format" id="jxT-CU-nIS">
-                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" option="YES"/>
                                 <menu key="submenu" title="Format" id="GEO-Iw-cKr">
                                     <items>
                                         <menuItem title="Font" id="Gi5-1S-RQB">
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="TocouNa89FM" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -703,15 +704,88 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="TocouNa89FM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="817" height="282"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ona-3f-eWw">
+                                <rect key="frame" x="559" y="245" width="240" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Cantor" id="vMt-MM-gsE">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="o3x-Y8-vd0">
+                                <rect key="frame" x="559" y="220" width="240" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Musica" id="3al-JY-rb8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K8m-bv-Es4">
+                                <rect key="frame" x="259" y="0.0" width="282" height="282"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="K8m-bv-Es4" secondAttribute="height" multiplier="1:1" id="PsM-nC-IcA"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" id="KC0-5L-ONN"/>
+                            </imageView>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Reg-U7-PdB">
+                                <rect key="frame" x="0.0" y="0.0" width="260" height="282"/>
+                                <clipView key="contentView" copiesOnScroll="NO" id="v0n-Ew-d9K">
+                                    <rect key="frame" x="1" y="1" width="258" height="280"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="rDf-YA-nyz">
+                                            <rect key="frame" x="0.0" y="0.0" width="258" height="280"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" id="RjU-5L-sOM">
+                                                <size key="itemSize" width="256" height="128"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="hvi-yj-3EA"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="YY4-4E-7Im">
+                                    <rect key="frame" x="-100" y="-100" width="425" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="t5o-XY-LC1">
+                                    <rect key="frame" x="254" y="1" width="16" height="280"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="K8m-bv-Es4" firstAttribute="leading" secondItem="rDf-YA-nyz" secondAttribute="trailing" id="3bw-P0-Age"/>
+                            <constraint firstItem="Ona-3f-eWw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="7AO-3n-rGM"/>
+                            <constraint firstItem="Ona-3f-eWw" firstAttribute="leading" secondItem="K8m-bv-Es4" secondAttribute="trailing" constant="20" id="Boh-Gj-Jds"/>
+                            <constraint firstAttribute="bottom" secondItem="Reg-U7-PdB" secondAttribute="bottom" id="Hyu-xV-hur"/>
+                            <constraint firstItem="o3x-Y8-vd0" firstAttribute="top" secondItem="Ona-3f-eWw" secondAttribute="bottom" constant="8" id="T1y-xa-S0k"/>
+                            <constraint firstAttribute="trailing" secondItem="o3x-Y8-vd0" secondAttribute="trailing" constant="20" id="T2E-aT-Xja"/>
+                            <constraint firstItem="o3x-Y8-vd0" firstAttribute="leading" secondItem="K8m-bv-Es4" secondAttribute="trailing" constant="20" id="V4L-oh-CA8"/>
+                            <constraint firstAttribute="trailing" secondItem="Ona-3f-eWw" secondAttribute="trailing" constant="20" id="Z3Q-lZ-pU3"/>
+                            <constraint firstAttribute="bottom" secondItem="K8m-bv-Es4" secondAttribute="bottom" id="cvP-Hi-D1y"/>
+                            <constraint firstItem="Reg-U7-PdB" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="mSc-bT-uZs"/>
+                            <constraint firstItem="K8m-bv-Es4" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="sRZ-x4-D4R"/>
+                            <constraint firstItem="Reg-U7-PdB" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="tHm-OU-6Nq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cantor" destination="Ona-3f-eWw" id="GA2-Xt-a22"/>
+                        <outlet property="image" destination="K8m-bv-Es4" id="noe-QQ-EPK"/>
+                        <outlet property="lista" destination="rDf-YA-nyz" id="V9R-Tp-b6A"/>
+                        <outlet property="musica" destination="o3x-Y8-vd0" id="HXq-6g-R8y"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="243.5" y="661"/>
         </scene>
     </scenes>
 </document>
