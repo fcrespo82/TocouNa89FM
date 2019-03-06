@@ -18,7 +18,7 @@ class ViewController: NSViewController, NSCollectionViewDataSource, NSCollection
             self.lista.reloadData()
         }
     }
-    var timer: Timer
+    var timer: Timer!
 
     // MARK: Outlets
     @IBOutlet weak var image: NSImageView!
@@ -39,28 +39,18 @@ class ViewController: NSViewController, NSCollectionViewDataSource, NSCollection
 
         container.loadMusic(finished: { (historico) in
             self.items = historico
+            self.showMusic(self.items.last!)
         })
 
         timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(exactly: 5)!, repeats: true) { (timer) in
-            RadioRockService.downloadSong { (tocando) in
+            self.container.downloadSong { (tocando) in
                 DispatchQueue.main.async { // Correct
-                    if (self.cantor.stringValue != tocando.cantor && self.musica.stringValue != tocando.musica)
-                    {
-                        self.cantor.stringValue = tocando.cantor
-                        self.musica.stringValue = tocando.musica
 
-                        if let url = tocando.cover { // Only try to load the URL if its set
-                            self.image.image = NSImage(contentsOf: url)
-                        }
-
-                        let musica = Musica(context: self.container.viewContext)
-                        musica.cantor = tocando.cantor
-                        musica.nome = tocando.musica
-                        musica.capa = tocando.cover
-
-                        self.items.append(musica)
-
-                        self.container.saveContext()
+                    if (self.items.last?.cantor != tocando.cantor && self.items.last?.nome != tocando.musica) {
+                        self.container.saveSong(cantor: tocando.cantor, musica: tocando.musica, capa: tocando.cover, saved: { (musica) in
+                            self.items.append(musica)
+                            self.showMusic(musica)
+                        })
                     }
                 }
             }
@@ -77,11 +67,28 @@ class ViewController: NSViewController, NSCollectionViewDataSource, NSCollection
         let cell: MusicNSCollectionViewItem = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "MusicCell"), for: indexPath) as! MusicNSCollectionViewItem
 
         cell.cantor.stringValue = self.items[indexPath.item].cantor!
-        cell.musica.stringValue = self.items[indexPath.item].musica!
+        cell.musica.stringValue = self.items[indexPath.item].nome!
         cell.capa.image =
             NSImage(contentsOf: self.items[indexPath.item].capa!)
 
         return cell
+    }
+
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        let musica = self.items[(indexPaths.first?.item)!]
+        showMusic(musica)
+    }
+
+    func showMusic(_ musica: Musica) {
+        DispatchQueue.main.async { // Correct
+            self.cantor.stringValue = musica.cantor!
+            self.musica.stringValue = musica.nome!
+
+            if let url = musica.capa { // Only try to load the URL if its set
+                self.image.image = NSImage(contentsOf: url)
+            }
+        }
+
     }
 }
 

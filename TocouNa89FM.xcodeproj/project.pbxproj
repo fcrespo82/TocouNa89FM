@@ -13,7 +13,6 @@
 		EDE9ED5D222C6A2C00EA612A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9ED5C222C6A2C00EA612A /* ViewController.swift */; };
 		EDE9ED5F222C6A2E00EA612A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE9ED5E222C6A2E00EA612A /* Assets.xcassets */; };
 		EDE9ED62222C6A2E00EA612A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE9ED60222C6A2E00EA612A /* Main.storyboard */; };
-		EDE9ED6B222C6A6400EA612A /* RadioRockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9ED6A222C6A6400EA612A /* RadioRockService.swift */; };
 		EDE9ED6D222C6B5A00EA612A /* RadioRockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9ED6C222C6B5A00EA612A /* RadioRockModel.swift */; };
 		EDE9ED72222CCC9C00EA612A /* MusicNSCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9ED70222CCC9C00EA612A /* MusicNSCollectionViewItem.swift */; };
 		EDE9ED73222CCC9C00EA612A /* MusicNSCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE9ED71222CCC9C00EA612A /* MusicNSCollectionViewItem.xib */; };
@@ -29,7 +28,6 @@
 		EDE9ED61222C6A2E00EA612A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDE9ED63222C6A2E00EA612A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDE9ED64222C6A2E00EA612A /* TocouNa89FM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TocouNa89FM.entitlements; sourceTree = "<group>"; };
-		EDE9ED6A222C6A6400EA612A /* RadioRockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioRockService.swift; sourceTree = "<group>"; };
 		EDE9ED6C222C6B5A00EA612A /* RadioRockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioRockModel.swift; sourceTree = "<group>"; };
 		EDE9ED70222CCC9C00EA612A /* MusicNSCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicNSCollectionViewItem.swift; sourceTree = "<group>"; };
 		EDE9ED71222CCC9C00EA612A /* MusicNSCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicNSCollectionViewItem.xib; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 				ED5CF434222E058B00439DDA /* RadioRockModel.xcdatamodeld */,
 				EDE9ED63222C6A2E00EA612A /* Info.plist */,
 				EDE9ED64222C6A2E00EA612A /* TocouNa89FM.entitlements */,
-				EDE9ED6A222C6A6400EA612A /* RadioRockService.swift */,
 				EDE9ED6C222C6B5A00EA612A /* RadioRockModel.swift */,
 				EDE9ED70222CCC9C00EA612A /* MusicNSCollectionViewItem.swift */,
 				EDE9ED71222CCC9C00EA612A /* MusicNSCollectionViewItem.xib */,
@@ -163,7 +160,6 @@
 				EDE9ED6D222C6B5A00EA612A /* RadioRockModel.swift in Sources */,
 				ED5CF438222E097E00439DDA /* PersistentContainer.swift in Sources */,
 				EDE9ED72222CCC9C00EA612A /* MusicNSCollectionViewItem.swift in Sources */,
-				EDE9ED6B222C6A6400EA612A /* RadioRockService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
