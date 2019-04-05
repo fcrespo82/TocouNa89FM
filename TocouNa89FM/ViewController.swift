@@ -39,7 +39,9 @@ class ViewController: NSViewController, NSCollectionViewDataSource, NSCollection
 
         container.loadMusic(finished: { (historico) in
             self.items = historico
-            self.showMusic(self.items.last!)
+            if (!self.items.isEmpty) {
+                self.showMusic(self.items.last!)
+            }
         })
 
         timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(exactly: 5)!, repeats: true) { (timer) in

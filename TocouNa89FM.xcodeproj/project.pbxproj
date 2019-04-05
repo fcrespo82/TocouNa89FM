@@ -110,6 +110,7 @@
 				TargetAttributes = {
 					EDE9ED56222C6A2C00EA612A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -306,7 +307,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.crespo.TocouNa89FM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -324,7 +325,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.crespo.TocouNa89FM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
